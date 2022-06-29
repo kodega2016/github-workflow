@@ -11,4 +11,10 @@ jobs:
       steps:
         - name: log a string
           run: echo "Hello world"
+        
+        - name: multiline script
+          run: |
+            node -v
+            npm -v
+
 
