@@ -10,7 +10,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: log a string
-          run: echo "Hello world"
+          run: eccho "Hello world"
         
         - name: multiline script
           run: |
