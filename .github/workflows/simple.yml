@@ -1,0 +1,14 @@
+name: Simple Workflow
+
+on:
+    push:
+      branches:
+        - main
+jobs:
+    run-shell-command:
+      name: "Simple shell command"
+      runs-on: ubuntu-latest
+      steps:
+        - name: log a string
+          run: echo "Hello world"
+
