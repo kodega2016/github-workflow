@@ -1,0 +1,12 @@
+name: Shedule Action
+
+on:
+  schedule:
+    cron:
+      - "* * * * *"  
+jobs:
+    Simple Console:
+    name: "Simple log"
+    steps: 
+      run: echo "Hello World"
+    
