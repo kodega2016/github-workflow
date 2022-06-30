@@ -1,0 +1,15 @@
+name: Filter Action
+on:
+  push:
+    branches:
+      - "feature/*"
+
+jobs:
+  simple_logger:
+    name: Simple Logger
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Log Welcome Message"
+        run: |
+          echo "Hello Developer"
+          echo "Are you ready to jump into Github Action Course?"
