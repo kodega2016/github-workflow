@@ -1,7 +1,7 @@
 name: Shedule Action
 on:
   schedule:
-    - cron: "* * * * *"
+    - cron: "*/1 * * * *"
 jobs:
     simple-schedule:
      name: Simple Schesule
