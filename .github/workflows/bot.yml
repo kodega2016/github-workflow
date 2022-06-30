@@ -41,7 +41,7 @@ jobs:
           ls -a
           echo $RANDOM >> random.txt
           ls -a
-          git add -a
+          git add .
           git commit -m "Added random file"
           git push
 
