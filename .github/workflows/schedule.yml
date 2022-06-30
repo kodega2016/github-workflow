@@ -1,7 +1,10 @@
 name: Shedule Action
 on:
-  schedule:
-    - cron: "*/1 * * * *"
+  pull_request:
+    types:
+      - opened
+  # schedule:
+  #   - cron: "*/1 * * * *"
 jobs:
     simple-schedule:
      name: Simple Schesule
