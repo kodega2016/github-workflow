@@ -30,4 +30,19 @@ jobs:
       - run: |
           pwd
           ls -a
+          git init
+          git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
+          git config --global user.email "my-bot@bot.com"
+          git config --global user.name "BOT"
+          git fetch 
+          git checkout master
+          git branch --set-upstream-to=origin/master
+          git pull
+          ls --data
+          echo $RANDOM >> random.txt
+          ls -a
+          git add -a
+          git commit -m "Added random file"
+          git push
+
     
