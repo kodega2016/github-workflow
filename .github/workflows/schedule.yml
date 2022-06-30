@@ -1,0 +1,10 @@
+name: Shedule Action
+on:
+  schedule:
+    - cron: "* * * * *"
+jobs:
+    simple-schedule:
+     name: Simple Schesule
+     runs-on: ubuntu-latest
+     steps:
+      - run: echo "Hello World"
