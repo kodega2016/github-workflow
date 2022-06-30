@@ -1,0 +1,15 @@
+name: Simple BOT GITHUB WORKFLOW
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+    create-a-random-repo:
+      name: Create a random Github repository
+      runs-on: ubuntu-latest
+      steps:
+        - run: |
+            echo ${{github.repository}}
+            echo ${{github.sha}}
