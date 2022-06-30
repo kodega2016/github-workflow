@@ -7,4 +7,5 @@ jobs:
      name: Simple Schesule
      runs-on: ubuntu-latest
      steps:
-      - run: echo "Hello World"
+       - name: Log String
+         run: echo "Hello World"
