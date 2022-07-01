@@ -7,7 +7,7 @@ on:
 jobs:
     setup_github_variables:
         name: Setup Github context
-        if: github.event_name=="pull_request"
+        if: github.event_name=='pull_request'
         runs-on: ubuntu-latest
         env:
             GITHUB-CONTEXT: ${{toJSON(github)}}
