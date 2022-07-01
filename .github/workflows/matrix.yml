@@ -13,12 +13,12 @@ jobs:
                 node_version: [8, 8, 10]
                 include:
                     - os: ubuntu-latest
-                      node-version: 8
+                      node_version: 8
                       is_v_8: "true"
 
                 exclude:
                     - os: ubuntu-latest
-                      node-version: 6
+                      node_version: 6
 
         name: Node Version Installer
         runs-on: ${{matrix.os}}
