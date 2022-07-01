@@ -9,7 +9,7 @@ jobs:
         name: Setup Basic Github Context
         runs-on: ubuntu-latest
         env:
-            GITHUB_CONTEXT: ${{ toJSON(github) } }
+            GITHUB_CONTEXT: ${{ toJSON(github) }}
         steps:
             - run: |
                   echo ${GITHUB_CONTEXT.repository}
