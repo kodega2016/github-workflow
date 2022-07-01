@@ -13,7 +13,7 @@ jobs:
                 node_version: [8, 8, 10]
 
         name: Node Version Installer
-        runs-on: ubuntu-latest
+        runs-on: ${{matrix.os}}
         steps:
             - name: Log Node Version
               run: node -v
