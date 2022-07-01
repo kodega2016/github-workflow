@@ -10,3 +10,17 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: echo "Started..."
+
+    decrypt_secret_files:
+        name: Decrypt Secret File
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
+            - name: Decrypt File
+              env:
+                  PASSPHARASE: ${{secrets.PASSPHARASE}}
+              run:
+                  gpg --quiet --batch --yes --decrypt          --passphrase="$PASSPHARASE" \
+                  --output $HOME/secret.json secret.json.gpg
+            - name: Print our file content
+              run: cat $HOME/secret.json
