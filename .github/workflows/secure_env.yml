@@ -20,7 +20,7 @@ jobs:
               env:
                   PASSPHARASE: ${{secrets.PASSPHARASE}}
 
-              run:
+              run: |
                   gpg --quiet --batch --yes --decrypt          --passphrase="$PASSPHARASE" \
                   --output $HOME/secret.json secret.json.gpg
             - name: Print our file content
