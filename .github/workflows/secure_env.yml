@@ -19,8 +19,8 @@ jobs:
             - name: Decrypt File
               env:
                   PASSPHARASE: ${{secrets.PASSPHARASE}}
-              run:
-                  gpg --quiet --batch --yes --decrypt          --passphrase="$PASSPHARASE" \
-                  --output $HOME/secret.json secret.json.gpg
+
+              run: echo $PASSPHARASE
+
             - name: Print our file content
               run: cat $HOME/secret.json
