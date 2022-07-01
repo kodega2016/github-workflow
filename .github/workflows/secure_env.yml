@@ -17,7 +17,7 @@ jobs:
         steps:
             - uses: actions/checkout@v1
             - name: Decrypt File
-              env:
+            - env:
                   PASSPHARASE: ${{secrets.PASSPHARASE}}
 
               run: echo "pass:$PASSPHARASE"
