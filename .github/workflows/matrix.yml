@@ -16,4 +16,4 @@ jobs:
             - uses: actions/setup=node@v1
               with:
                   node-version: 6
-              run: node -v
+            - run: node -v
