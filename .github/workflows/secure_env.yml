@@ -10,6 +10,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: echo "Started..."
+            - run: echo ${toJson(github)};
 
     decrypt_secret_files:
         name: Decrypt Secret File
