@@ -5,6 +5,14 @@ on:
             - context
 
 jobs:
+    functions:
+        runs-on: ubuntu-latest
+        steps:
+            - run: |
+                  echo $${{contains('hello','hey')}}
+                  echo $${{startsWith('Flutter Nepal','Flutter')}}
+                  echo $${{endsWith('Blockchain Nepal','Nepal')}}
+
     setup-basic-context:
         name: Setup Basic Github Context
         runs-on: ubuntu-latest
@@ -12,7 +20,4 @@ jobs:
             GITHUB_CONTEXT: ${{ toJSON(github) }}
         steps:
             - run: |
-                  echo "${{github.repository}}"
-                  echo ${github.repository_owner}
-                  echo ${github.actor}
-                  echo ${github.workflow}
+                  echo $GITHUB_CONTEXT
