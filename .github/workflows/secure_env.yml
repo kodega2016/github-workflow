@@ -3,7 +3,6 @@ on:
     push:
         branches:
             - secure
-
 jobs:
     simple_logger:
         name: "Simple Logger"
@@ -20,6 +19,8 @@ jobs:
         steps:
             - uses: actions/checkout@v1
             - name: Decrypt File
+              continue-on-error: true
+              timeout-minutes: 2
               env:
                   PASSPHARASE: ${{secrets.PASSPHARASE}}
 

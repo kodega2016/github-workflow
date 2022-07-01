@@ -1,0 +1,19 @@
+name: Matrix flow
+
+on:
+    push:
+        branches:
+            - matrix
+
+jobs:
+    node-version:
+        name: Node Version Installer
+        runs-on: ubuntu-latest
+        steps:
+            - name: Log Node Version
+              run: node -v
+            - uses: actions/checkout@v3
+            - uses: actions/setup=node@v1
+              with:
+                  node-version: 6
+              run: node -v
