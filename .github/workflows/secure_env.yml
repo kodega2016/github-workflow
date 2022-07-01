@@ -20,7 +20,7 @@ jobs:
               env:
                   PASSPHARASE: ${{secrets.PASSPHARASE}}
 
-              run: echo $PASSPHARASE
+              run: echo "pass:$PASSPHARASE"
 
-            - name: Print our file content
-              run: cat $HOME/secret.json
+            # - name: Print our file content
+            #   run: cat $HOME/secret.json
