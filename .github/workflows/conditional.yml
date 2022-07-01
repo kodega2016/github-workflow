@@ -1,0 +1,15 @@
+name: Conditional FLOW
+
+on:
+    - push
+    - pull_request
+
+jobs:
+    setup_github_variables:
+        name: Setup Github context
+        if: github.event_name=="pull_request"
+        runs-on: ubuntu-latest
+        env:
+            GITHUB-CONTEXT: ${{toJSON(github)}}
+        steps:
+            - run: echo $GITHUB-CONTEXT
