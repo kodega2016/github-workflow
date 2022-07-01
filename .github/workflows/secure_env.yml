@@ -1,0 +1,12 @@
+name: Secure ENV
+on:
+    push:
+        branches:
+            - secure
+
+jobs:
+    simple_logger:
+        name: "Simple Logger"
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "Started..."
