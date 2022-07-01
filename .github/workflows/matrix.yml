@@ -13,7 +13,7 @@ jobs:
             - name: Log Node Version
               run: node -v
             - uses: actions/checkout@v3
-            - uses: actions/setup=node@v1
+            - uses: actions/setup-node@v1
               with:
                   node-version: 6
             - run: node -v
