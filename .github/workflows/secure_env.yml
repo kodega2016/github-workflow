@@ -20,7 +20,7 @@ jobs:
         steps:
             - uses: actions/checkout@v1
             - name: Decrypt File
-              run: echo "pass:$PASSPHARASE"
+              run: echo "pass:${{env.PASSPHARASE}}"
 
             # - name: Print our file content
             #   run: cat $HOME/secret.json
