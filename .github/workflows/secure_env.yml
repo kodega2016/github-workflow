@@ -4,9 +4,6 @@ on:
         branches:
             - secure
 
-env:
-    PASSPHARASE: "${{secrets.PASSPHARASE}}"
-
 jobs:
     simple_logger:
         name: "Simple Logger"
@@ -20,7 +17,11 @@ jobs:
         steps:
             - uses: actions/checkout@v1
             - name: Decrypt File
-              run: echo "pass:${{env.PASSPHARASE}}"
+              env:
+                  PASSPHARASE: ${{secrets.PASSPHARASE}}
 
-            # - name: Print our file content
-            #   run: cat $HOME/secret.json
+              run:
+                  gpg --quiet --batch --yes --decrypt          --passphrase="$PASSPHARASE" \
+                  --output $HOME/secret.json secret.json.gpg
+            - name: Print our file content
+              run: cat $HOME/secret.json
