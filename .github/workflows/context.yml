@@ -1,0 +1,18 @@
+name: Context FLOW
+on:
+    push:
+        branches:
+            - context
+
+jobs:
+    setup-basic-context:
+        name: Setup Basic Github Context
+        runs-on: ubuntu-latest
+        env:
+            GITHUB_CONTEXT: ${{ toJSON(github) } }
+        steps:
+            - run: |
+                  echo ${GITHUB_CONTEXT.repository}
+                  echo ${GITHUB_CONTEXT.repository_owner}
+                  echo ${GITHUB_CONTEXT.actor}
+                  echo ${GITHUB_CONTEXT.workflow}
