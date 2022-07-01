@@ -7,6 +7,11 @@ on:
 
 jobs:
     node-version:
+        strategy:
+            matrix:
+                os: [macos-latest, ubuntu-latest, windows-latest]
+                node_version: [8, 8, 10]
+
         name: Node Version Installer
         runs-on: ubuntu-latest
         steps:
@@ -15,5 +20,5 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v1
               with:
-                  node-version: 6
+                  node-version: ${{matrix.node_version}}
             - run: node -v
