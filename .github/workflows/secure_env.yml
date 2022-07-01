@@ -9,8 +9,10 @@ jobs:
         name: "Simple Logger"
         runs-on: ubuntu-latest
         steps:
-            - run: echo "Started..."
-            - run: echo ${toJson(github)};
+            - name: "Log Github Context"
+              env:
+                  GITHUB_CONTEXT: ${{ toJSON(github) }}
+              run: echo $GITHUB_CONTEXT
 
     decrypt_secret_files:
         name: Decrypt Secret File
