@@ -5,9 +5,18 @@ on:
     - pull_request
 
 jobs:
-    setup_github_variables:
-        name: Setup Github context
+    setup_github_variables_pr:
+        name: Setup Github context for PR
         if: github.event_name=='pull_request'
+        runs-on: ubuntu-latest
+        env:
+            GITHUB-CONTEXT: ${{toJSON(github)}}
+        steps:
+            - run: echo $GITHUB-CONTEXT
+
+    setup_github_variables_push:
+        name: Setup Github context for push
+        if: github.event_name=='push'
         runs-on: ubuntu-latest
         env:
             GITHUB-CONTEXT: ${{toJSON(github)}}
