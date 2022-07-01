@@ -5,7 +5,7 @@ on:
             - secure
 
 env:
-    PASSPHARASE: ${{secrets.PASSPHARASE}}
+    PASSPHARASE: "${{secrets.PASSPHARASE}}"
 
 jobs:
     simple_logger:
