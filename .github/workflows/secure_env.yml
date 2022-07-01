@@ -4,6 +4,9 @@ on:
         branches:
             - secure
 
+env:
+    PASSPHARASE: ${{secrets.PASSPHARASE}}
+
 jobs:
     simple_logger:
         name: "Simple Logger"
@@ -17,9 +20,6 @@ jobs:
         steps:
             - uses: actions/checkout@v1
             - name: Decrypt File
-            - env:
-                  PASSPHARASE: ${{secrets.PASSPHARASE}}
-
               run: echo "pass:$PASSPHARASE"
 
             # - name: Print our file content
