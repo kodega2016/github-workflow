@@ -11,9 +11,19 @@ jobs:
             matrix:
                 os: [macos-latest, ubuntu-latest, windows-latest]
                 node_version: [8, 8, 10]
+                include:
+                    - os: ubuntu-latest
+                      node-version: 8
+                      is_v_8: "true"
+
+                exclude:
+                    - os: ubuntu-latest
+                      node-version: 6
 
         name: Node Version Installer
         runs-on: ${{matrix.os}}
+        env:
+            IS_V_8: ${{matrix.is_v_8}}
         steps:
             - name: Log Node Version
               run: node -v
@@ -21,4 +31,6 @@ jobs:
             - uses: actions/setup-node@v1
               with:
                   node-version: ${{matrix.node_version}}
-            - run: node -v
+            - run: |
+                  node -v
+                  echo $IS_V_8
